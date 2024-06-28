@@ -8,6 +8,6 @@
         "sourceMap": true,
         "outDir": "dist"
     },
-    "include": ["src"],
+    "include": ["./api/*.ts", "src"],
     "exclude": ["node_modules"]
 }
