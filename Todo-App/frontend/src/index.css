@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+#cross-icon:hover {
+    filter: invert(14%) sepia(100%) saturate(6538%) hue-rotate(8deg)
+        brightness(108%) contrast(123%);
+}
+
+.dark #cross-icon:hover {
+    filter: invert(14%) sepia(100%) saturate(6538%) hue-rotate(8deg)
+        brightness(108%) contrast(123%);
+}
+
+.dark #cross-icon {
+    filter: invert(35%) sepia(26%) saturate(463%) hue-rotate(197deg)
+        brightness(100%) contrast(92%);
+}
