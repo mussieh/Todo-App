@@ -36,12 +36,12 @@ export default {
             fontFamily: {
                 sans: ["Josefin Sans", "sans-serif"],
             },
-            backgroundImage: () => ({
-                desktopLight: "url('./src/assets/images/bg-desktop-light.jpg')",
-                desktopDark: "url('./src/assets/images/bg-desktop-dark.jpg')",
-                mobileLight: "url('./src/assets/images/bg-mobile-light.jpg')",
-                mobileDark: "url('./src/assets/images/bg-mobile-dark.jpg')",
-            }),
+            backgroundImage: {
+                desktopLight: "url('/images/bg-desktop-light.jpg')",
+                desktopDark: "url('/images/bg-desktop-dark.jpg')",
+                mobileLight: "url('/images/bg-mobile-light.jpg')",
+                mobileDark: "url('/images/bg-mobile-dark.jpg')",
+            },
         },
     },
     plugins: [
