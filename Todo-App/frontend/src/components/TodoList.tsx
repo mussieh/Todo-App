@@ -1,3 +1,4 @@
+import { Todo } from "../shared/types/Todo";
 import TodoItem from "./TodoItem";
 import {
     DragDropContext,
