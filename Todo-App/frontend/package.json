@@ -2,12 +2,9 @@
     "name": "frontend",
     "private": true,
     "version": "0.0.0",
-    "homepage": "https://mussieh.github.io/Todo-App-MERN/",
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "predeploy": "npm run build",
-        "deploy": "npm run build && gh-pages -d dist",
         "build": "tsc -b && vite build",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
