@@ -1,4 +1,3 @@
-import { Todo } from "../services/todos";
 import TodoItem from "./TodoItem";
 import {
     DragDropContext,
