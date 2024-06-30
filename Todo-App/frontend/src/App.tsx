@@ -18,6 +18,7 @@ import { deleteTodo } from "./services/deleteTodo";
 import { getTodos } from "./services/getTodos";
 import { Todo } from "./shared/types/Todo";
 import { useLocalStorageState } from "./hooks/useLocalStorageState";
+import Loader from "./components/Loader";
 
 const App = () => {
     const [todos, setTodos] = useState<Todo[]>([]);
@@ -27,11 +28,14 @@ const App = () => {
         false,
         "isDarkMode"
     );
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchTodos = async () => {
+            setIsLoading(true);
             const newTodos = await getTodos();
             setTodos(newTodos);
+            setIsLoading(false);
         };
 
         fetchTodos();
@@ -164,12 +168,17 @@ const App = () => {
                 </div>
 
                 <div className="max-w-[54rem] h-fit rounded-lg bg-white dark:bg-darkVeryDarkDesaturatedBlue mt-[2rem] shadow-2xl">
-                    <TodoList
-                        todos={getFilteredTodos()}
-                        onUpdateTodo={handleUpdateTodo}
-                        onDeleteTodo={handleDeleteTodo}
-                        onDragEnd={handleOnDragEnd}
-                    />
+                    {isLoading ? (
+                        <Loader />
+                    ) : (
+                        <TodoList
+                            todos={getFilteredTodos()}
+                            onUpdateTodo={handleUpdateTodo}
+                            onDeleteTodo={handleDeleteTodo}
+                            onDragEnd={handleOnDragEnd}
+                        />
+                    )}
+
                     <div className="relative top-0 w-full max-w-[54rem]">
                         <TodoStatus
                             filterType={filter}
